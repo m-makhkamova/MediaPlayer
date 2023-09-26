@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
             add(Music("Konsta-O'zbekistonlik", R.raw.uzbekistonlik))
             add(Music("Konsta-Takoy Lyoxkiy", R.raw.takoy))
         }
-        binding.rv.adapter = MusicAdapter(musicList)
+        var musicAdapter = MusicAdapter(musicList)
+        binding.rv.adapter = musicAdapter
+
           var status = false
         binding.play.setOnClickListener {
             if(!status){

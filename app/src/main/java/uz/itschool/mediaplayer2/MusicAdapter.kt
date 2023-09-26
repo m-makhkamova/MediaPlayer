@@ -1,12 +1,13 @@
 package uz.itschool.mediaplayer2
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MusicAdapter(var list:MutableList<Music>): RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
+class MusicAdapter(var list:MutableList<Music>): RecyclerView.Adapter<MusicAdapter.ViewHolder>(){
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
            var musicName:TextView = itemView.findViewById(R.id.music_name)
     }
@@ -22,6 +23,10 @@ class MusicAdapter(var list:MutableList<Music>): RecyclerView.Adapter<MusicAdapt
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.musicName.text = list[position].name
+    }
+
+    interface onClick{
+        fun onClick(position: Int)
     }
 
 
